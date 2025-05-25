@@ -97,8 +97,9 @@ WORKDIR /app
 COPY --from=builder /usr/local/lib/python3.12/site-packages/ /usr/local/lib/python3.12/site-packages/
 COPY --from=builder /app /app
 
-# Install Playwright's Chromium browser in the final stage
-RUN playwright install chromium --with-deps
+# Install playwright CLI and browser in the final stage
+RUN pip install --no-cache-dir playwright>=1.49.0 && \
+    playwright install chromium --with-deps
 
 EXPOSE ${PORT}
 
