@@ -1,0 +1,20 @@
+[config]
+# Required environment variables that must be provided when deploying
+required_env = [
+    "OPENAI_API_KEY",
+    "OPENAI_API_BASE",
+    "MODEL_CHOICE",
+    "SUPABASE_URL",
+    "SUPABASE_SERVICE_KEY"
+]
+
+[config.descriptions]
+OPENAI_API_KEY = "Your OpenAI API key for embeddings model"
+OPENAI_API_BASE = "Your OpenAI API base URL"
+MODEL_CHOICE = "The LLM model to use for contextual embeddings (e.g., BAAI/bge-large-en-v1.5)"
+SUPABASE_URL = "Your Supabase project URL"
+SUPABASE_SERVICE_KEY = "Your Supabase service role secret key"
+
+[config.defaults]
+# No default values provided for security reasons
+# Users must provide their own credentials
