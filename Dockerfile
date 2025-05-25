@@ -97,6 +97,9 @@ WORKDIR /app
 COPY --from=builder /usr/local/lib/python3.12/site-packages/ /usr/local/lib/python3.12/site-packages/
 COPY --from=builder /app /app
 
+# Install Playwright's Chromium browser in the final stage
+RUN playwright install chromium --with-deps
+
 EXPOSE ${PORT}
 
 # Command to run the MCP server directly with python
