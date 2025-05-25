@@ -33,8 +33,8 @@ RUN pip install --no-cache-dir uv
 # Copy dependency files first
 COPY pyproject.toml uv.lock ./
 
-# Pre-install dependencies including playwright
-RUN uv pip install --system crawl4ai==0.6.2 mcp==1.7.1 supabase==2.15.1 openai==1.71.0 dotenv==0.9.9 playwright==1.42.0
+# Pre-install dependencies including playwright with compatible version
+RUN uv pip install --system crawl4ai==0.6.2 mcp==1.7.1 supabase==2.15.1 openai==1.71.0 dotenv==0.9.9 playwright>=1.49.0
 
 # Install playwright browser
 RUN playwright install chromium
